@@ -11,7 +11,7 @@ public class ProcessadorVideo {
     public void processar(Video video) {
         Mensagem mensagem = new Mensagem();
         mensagem.setTexto(video.getArquivo()+ " - " + video.getFormato());
-        mensagem.setTipo(TipoMensagem.LOG);
+        mensagem.setTipoMensagem(TipoMensagem.LOG);
 
         for (CanalNotificacao canal : canais) {
             canal.notificar(mensagem);
