@@ -59,19 +59,19 @@ public class Estoque {
             id = 1; // Se não houver produtos, iniciar com ID 1
         }
         if(quantidade < 0 || preco < 0) {
-            System.out.println("Quantidade e/ou preço devem ser positivos.");
+           // System.out.println("Quantidade e/ou preço devem ser positivos.");
             return;
         }
         Produto produto = new Produto(id, nome, quantidade, preco);
         produtos.add(produto);
         salvarProdutosNoArquivo("estoque.csv");
-        System.out.println("Produto adicionado: " + produto);
+        //System.out.println("Produto adicionado: " + produto);
     }
 
     public void excluirProduto(int id) {
         produtos.removeIf(produto -> produto.getId() == id);        
         salvarProdutosNoArquivo("estoque.csv");
-        System.out.println("Produto com ID " + id + " excluído.");
+        //System.out.println("Produto com ID " + id + " excluído.");
     }
 
     public void exibirEstoque() {
@@ -84,12 +84,12 @@ public class Estoque {
         for (Produto produto : produtos) {
             if (produto.getId() == id) {
                 produto.setQuantidade(novaQuantidade);
-                System.out.println("Quantidade atualizada: " + produto);                
+                //System.out.println("Quantidade atualizada: " + produto);                
                 salvarProdutosNoArquivo("estoque.csv"); 
                 return;
             }
         }
-        System.out.println("Produto com ID " + id + " não encontrado.");
+        //System.out.println("Produto com ID " + id + " não encontrado.");
     }
 
     public List<Produto> getProdutos() {
