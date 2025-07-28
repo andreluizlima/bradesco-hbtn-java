@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class Estoque {
         List<Produto> produtos = new ArrayList<>();
         // Lógica para ler o arquivo CSV e popular a lista de produtos
         try {
-            BufferedReader reader = new BufferedReader(new java.io.FileReader(fileName));
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] fields = line.split(",");
