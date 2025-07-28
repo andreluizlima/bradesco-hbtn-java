@@ -22,7 +22,10 @@ public class FileWritingExercise {
             System.out.print("Digite o conteúdo a ser escrito no arquivo('sair' para finalizar): ");
             String fileContent = scanner.nextLine();
 
-            while (!fileContent.equalsIgnoreCase("sair")) {
+            while (true) {
+                if (fileContent.equalsIgnoreCase("sair")) {
+                    break;
+                }
                 bufferedWriter.write(fileContent + '\n');
                 System.out.print("Digite o conteúdo a ser escrito no arquivo('sair' para finalizar): ");
                 fileContent = scanner.nextLine();
