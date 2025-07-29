@@ -20,7 +20,7 @@ public class GerenciamentoDeContatos {
             if (contato.adicionarEmail(email)) {
                 contato.adicionarTelefone(telefone);
                 contatos.put(nome, contato);
-                System.out.println("Contato " + nome + " adicionado com sucesso.");
+                System.out.println("Contato " + nome + " adicionado com sucesso!");
             } else {
                 System.out.println("Email duplicado para o contato " + nome + ".");
             }
@@ -38,7 +38,6 @@ public class GerenciamentoDeContatos {
             entry.getValue().exibirContato();
             System.out.println("-------------------------------");
         }
-        System.out.println("");
     }
 
 
@@ -51,7 +50,6 @@ public class GerenciamentoDeContatos {
         } else {
             System.out.println("Contato " + nome + " não encontrado.");
         }
-        System.out.println("");
     }
 
 
@@ -59,11 +57,10 @@ public class GerenciamentoDeContatos {
     public void removerContato(String nome) {
         if (contatos.containsKey(nome)) {
             contatos.remove(nome);
-            System.out.println("Contato " + nome + " removido com sucesso.");
+            System.out.println("Contato " + nome + " removido com sucesso!");
         } else {
-            System.out.println("Contato " + nome + " não encontrado para remoção.");
+            System.out.println("Contato " + nome + " não encontrado.");
         }
-        System.out.println("");
     }
 
 
