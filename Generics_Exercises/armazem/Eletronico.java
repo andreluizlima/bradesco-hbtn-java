@@ -9,7 +9,7 @@ public class Eletronico {
 
     @Override
     public String toString() {
-        return "[" + descricao + "] R$ " + valor;
+        return String.format("[%s] R$ %f", descricao, valor);
     }
     public String getDescricao() {
         return descricao;
