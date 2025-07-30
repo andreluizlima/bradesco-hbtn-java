@@ -14,7 +14,7 @@ public class Pedido {
     public int obterTotalCaixas(){
         int totalCaixas = 0;
         for (PedidoCookie cookie : cookies) {
-            totalCaixas += cookie.getQuantidade();
+            totalCaixas += cookie.getQuantidadeCaixas();
         }
         return totalCaixas;
     }
@@ -24,7 +24,7 @@ public class Pedido {
         for (int i = 0; i < cookies.size(); i++) {
             PedidoCookie cookie = cookies.get(i);
             if (cookie.getSabor().equals(sabor)) {
-                totalRemovido += cookie.getQuantidade();
+                totalRemovido += cookie.getQuantidadeCaixas();
                 cookies.remove(i);
                 i--; // Ajusta o índice após remoção
             }
