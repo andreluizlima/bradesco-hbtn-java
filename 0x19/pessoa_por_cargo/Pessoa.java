@@ -16,7 +16,7 @@ public class Pessoa {
     public int getCodigo() {
         return codigo;
     }
-    
+
     public String getNome() {
         return nome;
     }
@@ -35,6 +35,6 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return String.format("[%d] %s %s %d R$ %.2f", codigo, nome, cargo, idade, salario);
+        return String.format("[%d] %s %s %d R$ %f", codigo, nome, cargo, idade, salario);
     }
 }
