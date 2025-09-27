@@ -43,6 +43,6 @@ public class Pessoa implements Comparable<Pessoa> {
     @Override
     public String toString() {
         return
-            "[" + codigo + "] "+ nome+ " "+ cargo + " "+ idade+ " R$ "+ String.format(new Locale("pt", "BR"), "%.2f", salario);
+            "[" + codigo + "] "+ nome+ " "+ cargo + " "+ idade+ " R$ "+ String.format(new Locale("pt", "BR"), "%f", salario);
     }
 }
