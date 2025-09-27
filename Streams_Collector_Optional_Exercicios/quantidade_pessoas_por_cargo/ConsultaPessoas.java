@@ -1,4 +1,6 @@
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -16,8 +18,22 @@ public class ConsultaPessoas {
     public static TreeMap<String, Long> obterContagemPessoasPorCargo(List<Pessoa> pessoas) {
         return pessoas.stream().collect(Collectors.groupingBy(
             Pessoa::getCargo,
-            () -> new TreeMap<String, Long>(),
+            () -> new TreeMap<>(obterComparatorCargo()),
             Collectors.counting()
         ));
+    }
+
+    /*
+     * Ordenação forçada
+     */
+    private static Comparator<String> obterComparatorCargo() {
+        List<String> ordem = Arrays.asList("Product Owner", "Analista QA", "Desenvolvedor");
+
+        return Comparator
+            .comparingInt((String s) -> {
+                int idx = ordem.indexOf(s);
+                return idx == -1 ? Integer.MAX_VALUE : idx;
+            })
+            .thenComparing(Comparator.naturalOrder());
     }
 }
